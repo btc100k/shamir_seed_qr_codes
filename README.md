@@ -1,7 +1,7 @@
 # Shamir Secret Sharing for your Seed Words
 
 This app encodes and decodes your seed words into a set of QR codes.
-You specify how many pieces you want to split it into, and how many are the minimum needed to recover your words.
+You specify how many shares you want to split it into, and how many are needed to recover your words.
 
 You can then print or upload the QR codes to save in different places.
 
@@ -28,8 +28,8 @@ Then you follow the prompts.
   * Default is to [e]ncode
 
 # Running - Encoding
-* You'll have to decide into how many pieces you want your seed split. (5 is the default)
-* You'll have to decide how many pieces you want to require to decode your seed words. (2 is the default)
+* You'll have to decide into how many shares you want your seed split. (5 is the default)
+* You'll have to decide how many shares you want to require (threshold) to decode your seed words. (2 is the default)
 * You'll have to type in your seed words.
   * You've been told this is a bad idea, and I agree.
   * You should *only* do this on a computer you're sure doesn't have viruses
