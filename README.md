@@ -9,6 +9,7 @@ You can then print or upload the QR codes to save in different places.
 * Before you melt your titanium plates to slag, get familiar with what this code is doing.
   * Shamir Secrets encode a number, but you want to store BIP39 seed words, so how is that working?
   * https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing
+  * The Shamir Secret parts of this code came from https://www.geeksforgeeks.org/implementing-shamirs-secret-sharing-scheme-in-python/
 * The words are converted to their BIP39 number (1-2048)
 * Each seed word number is converted into multiple parts (shares) which can be used to reconstruct the original number.
 * The first share from each word is joined into a JSON array and encoded into a QR code.
