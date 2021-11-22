@@ -1,6 +1,6 @@
-# shamir_seed_qr_codes
+# Shamir Secret Sharing for your Seed Words
 
-This app encodes and decodes your BIP39 seed words into a set of QR codes.
+This app encodes and decodes your seed words into a set of QR codes.
 You specify how many pieces you want to split it into, and how many are the minimum needed to recover your words.
 
 You can then print or upload the QR codes to save in different places.
