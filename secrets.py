@@ -216,7 +216,7 @@ def read_words():
 def do_encode():
     user_input = UserInput()
 
-    print("We are going to take your seed words, and create Shamir’s Secret Sharing QR codes for you to store.")
+    print("We are going to take your seed words, and create Shamir Secret Sharing QR codes for you to store.")
     print("-" * 20)
     count = input('How many total splits do you want? (Default: {count}) '.format(count=user_input.split_count))
     if len(count) > 0:
