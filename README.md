@@ -17,6 +17,11 @@ You can then print or upload the QR codes to save in different places.
 * So the QR codes represent a JSON array of shares of your words.
 * When you decode, the python code converts the QR codes to JSON, then joins the shares into their BIP39 word numbers.
 * The array of word numbers is then converted back into words for you to enter into your hardware wallet.
+* If you encode your seed with this method and then 10 or 100 years later cannot get this code to run, you can still recover your seed as follows:
+  * Assuming QR code readers still exist, you pull the text out of the QR codes.
+    * Each QR code holds a JSON array of one shares for each word.
+  * Separate the elements from each share, in order, into separate documents.
+  * You'll need to find some code that can decode a Shamir secret, or you'll have to figure out the math. The python code on the Wikipedia page should be easy to run once you have the JSON data from the QR codes.
 
 # Running
 
