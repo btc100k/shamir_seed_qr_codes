@@ -57,8 +57,10 @@ Hopefully you have python3 installed.
 You're probably going to need to install some python modules. These are the ones you'll need.
 * pip3 install mnemonic
 * pip3 install qrcode
-* pip3 install --upgrade pip setuptools wheel
-  * This might not be necessary, but I used on my Macintosh & Raspberry Pi
+* (optional) pip3 install --upgrade pip setuptools wheel
+  * This might not be necessary, but I used on Macintosh & Raspberry Pi
+* (optional) pip3 install cmake
+  * I needed this on Raspberry Pi, but not on Macintosh
 * pip3 install opencv-python
 * (install zbar, but this is platform specific. See below)
 * pip3 install pyzbar
