@@ -1,5 +1,4 @@
 # Shamir Secret Sharing for your Seed Words
-
 This app encodes and decodes your seed words into a set of QR codes.
 You specify how many shares you want to split it into, and how many are needed to recover your words.
 
@@ -24,7 +23,6 @@ You can then print or upload the QR codes to save in different places.
   * You'll need to find some code that can decode a Shamir secret, or you'll have to figure out the math. The python code on the Wikipedia page should be easy to run once you have the JSON data from the QR codes.
 
 # Running
-
 This is a python script, so you'll run on the command line by typing:
 * python3 ./secrets.py
 
@@ -51,7 +49,6 @@ Then you follow the prompts.
   * Make sure no one is looking over your shoulder.
 
 # Installation
-
 Hopefully you have python3 installed.
 
 You're probably going to need to install some python modules. These are the ones you'll need.
@@ -60,6 +57,8 @@ You're probably going to need to install some python modules. These are the ones
 * (optional) pip3 install --upgrade pip setuptools wheel
   * This might not be necessary, but I used on Macintosh & Raspberry Pi
 * (optional) pip3 install cmake
+  * I needed this on Raspberry Pi, but not on Macintosh
+* (optional) sudo apt install ninja-build
   * I needed this on Raspberry Pi, but not on Macintosh
 * pip3 install opencv-python
 * (install zbar, but this is platform specific. See below)
