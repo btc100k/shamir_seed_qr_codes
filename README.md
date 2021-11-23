@@ -54,13 +54,7 @@ Hopefully you have python3 installed.
 You're probably going to need to install some python modules. These are the ones you'll need.
 * pip3 install mnemonic
 * pip3 install qrcode
-* (optional) pip3 install --upgrade pip setuptools wheel
-  * This might not be necessary, but I used on Macintosh & Raspberry Pi
-* (optional) pip3 install cmake
-  * I needed this on Raspberry Pi, but not on Macintosh
-* (optional) sudo apt install ninja-build
-  * I needed this on Raspberry Pi, but not on Macintosh
-* pip3 install opencv-python
+* (see below) pip3 install opencv-python
 * (install zbar, but this is platform specific. See below)
 * pip3 install pyzbar
 
@@ -73,3 +67,36 @@ On Raspberry Pi, I used:
 * sudo apt-get install zbar-tools
 * sudo apt-get install python-zbar
 * sudo apt-get install libzbar0
+
+# opencv-python
+On an Raspberry Pi 4B, I could not get OpenCV to install through pip.
+I performed these steps
+* (optional) pip3 install --upgrade pip setuptools wheel
+  * This might not be necessary, but I did try it before finally succeeding
+* (optional) pip3 install cmake
+* (optional) sudo apt install ninja-build
+* I followed the directions here: https://pimylifeup.com/raspberry-pi-opencv/
+* sudo apt install build-essential pkg-config git
+* sudo apt install python3-dev
+* git clone https://github.com/opencv/opencv.git
+* git clone https://github.com/opencv/opencv_contrib.git
+* mkdir ~/opencv/build
+* cd ~/opencv/build
+* cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+    -D ENABLE_NEON=ON \
+    -D ENABLE_VFPV3=ON \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D OPENCV_ENABLE_NONFREE=ON \
+    -D CMAKE_SHARED_LINKER_FLAGS=-latomic \
+    -D BUILD_EXAMPLES=OFF ..
+* make
+* sudo make install
+* sudo ldconfig
+* From here, I went back to install zbar & pyzbar
+  * The make command took several hours, so be prepared.
+
+
+
