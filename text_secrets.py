@@ -113,7 +113,7 @@ def assemble_secrets(split_secrets):
 
     for one_word in word_secrets:
         word_index = reconstruct_secret(one_word)
-        if word_index >= len(word_list.wordlist):
+        if word_index >= len(word_list.wordlist) or word_index < 0:
             print("Could not decode secrets. Perhaps you did not supply enough shares.")
             exit(1)
         words.append(word_list.wordlist[(word_index - 1)])
