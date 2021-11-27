@@ -23,8 +23,13 @@ You can then print or upload the QR codes to save in different places.
   * You'll need to find some code that can decode a Shamir secret, or you'll have to figure out the math. The python code on the Wikipedia page should be easy to run once you have the JSON data from the QR codes.
 
 # Running
-This is a python script, so you'll run on the command line by typing:
+There are two versions of this code. One which creates QR codes, and the other which creates JSON text.
+
+You'll run the QR code version on the command line by typing:
 * python3 ./secrets.py
+
+You'll run the text version on the command line by typing:
+* python3 ./text_secrets.py
 
 Then you follow the prompts.
 * You'll have to decide if you're turning your seed words into QR codes (encoding) or turning QR codes into your seed words (decoding)
@@ -51,13 +56,17 @@ Then you follow the prompts.
 # Installation
 Hopefully you have python3 installed.
 
-You're probably going to need to install some python modules. These are the ones you'll need.
+You're probably going to need to install some python modules.
+
+These are the ones you'll need for the JSON text version:
+* pip3 install mnemonic
+
+These are the ones you'll need for the QR code version:
 * pip3 install mnemonic
 * pip3 install qrcode
 * (see below) pip3 install opencv-python
 * (install zbar, but this is platform specific. See below)
 * pip3 install pyzbar
-
 
 # Installing zbar
 On Macintosh, I used:
