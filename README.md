@@ -1,8 +1,8 @@
 # Shamir Secret Sharing for your Seed Words
-This app encodes and decodes your seed words into a set of QR codes.
+This app encodes and decodes your seed words into a set of Shamir Secret Shares. You will get either QR codes or JSON text strings to save.
 You specify how many shares you want to split it into, and how many are needed to recover your words.
 
-You can then print or upload the QR codes to save in different places.
+You can then print or upload the QR or JSON to save in different places.
 
 # Don't Trust. Verify.
 * Before you melt your titanium plates to slag, get familiar with what this code is doing.
@@ -44,12 +44,14 @@ Then you follow the prompts.
   * You should *only* do this on a computer that is not connected to the internet.
   * You can paste all your words at once (with a space between the words) or enter them one at a time.
   * If you do not enter any words, a hard-coded set will be used so you can see how this works.
-* The program then creates a bunch of png files (secret-share-#.png) which you then save in various places.
+* The program then creates a bunch of shares which you then save in various places.
+  * Either as png files (secret-share-#.png)
+  * Or as a long string of letters and square braces
 
 # Running - Decoding
-* You'll have to enter the full path to pictures of the QR codes.
+* You'll have to enter the the whole JSON string, or the full path to pictures of the QR codes.
   * One at a time.
-* Enter a blank line after you've entered all QR codes
+* Enter a blank line after you've entered all input
 * The app prints out your seed words
   * Make sure no one is looking over your shoulder.
 
