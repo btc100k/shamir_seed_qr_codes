@@ -21,8 +21,8 @@ import json
 # Numbers back into BIP 39 words
 
 
-
 FIELD_SIZE = 10 ** 5
+
 
 def reconstruct_secret(shares):
     """
@@ -191,9 +191,15 @@ def read_words():
         if len(word) == 0:
             break
         else:
+            # convert any commas to spaces
+            word = word.replace(",", " ")
+            word = word.strip()
             aslist = word.split(" ")
-            if len(aslist) == 12 or len(aslist) == 18 or len(aslist) == 24:
-                seedwords = aslist
+            if len(aslist) > 1:
+                for one in aslist:
+                    item = one.strip()
+                    if len(item):
+                        seedwords.append(item)
                 break
             else:
                 if word_list.is_valid(word):
